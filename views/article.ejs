@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' type="text/css" href='/bootstrap/css/bootstrap.css' />
+    <script type="text/javascript" src="/bootstrap/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+  </head>
+  <body>
+    <div class="container">
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <form action="<%= isNew ? '/article' : '/article/update/' + info._id%>" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="exampleInputEmail1">title</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="title" name="title" value="<%= info.title%>">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">content</label>
+          <textarea name='content' class="form-control" rows="4"><%= info.content%></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">input</label>
+            <input type="file" name="photo"/>
+        </div>
+        <% if(!isNew){%>
+            <input type="hidden" value="<%= info.filePath%>" name="oldPath"/>
+        <%}%>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
