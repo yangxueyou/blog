@@ -3,9 +3,10 @@
 npm i node-dev -g
 ```
 
-### https://v3.bootcss.com/components/
+### bootstrap
 ```
 bootstrap最外层放一个<div class="container"></div>
+https://v3.bootcss.com/components/
 ```
 
 ### 安装cnpm
